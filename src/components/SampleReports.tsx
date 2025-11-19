@@ -12,19 +12,19 @@ export default function SampleReports() {
       name: "Citibank | Income Statement",
       link: "/Citibank_NA_P3_Final.xls",
       preview: "/Citibank_NA_P3_Final.pdf",
-      thumbnail: "/Citibank-Logo.png"
+      thumbnail: "/citibank-Logo.png"
     },
     {
       name: "BNP Paribas | Income Statement",
       link: "/BNP_Paribas_P3_Final.xls",
       preview: "/BNP_Paribas_P3_Final.pdf",
-      thumbnail: "/BNP-Logo.png"
+      thumbnail: "/bnp-Logo.png"
     },
     {
       name: "Capital One | Income Statement",
       link: "/Capital_One_P3_Final.xls",
       preview: "/Capital_One_P3_Final.pdf",
-      thumbnail: "/CapitalOne-Logo.png"
+      thumbnail: "/capitalone-Logo.png"
     }
   ];
 
