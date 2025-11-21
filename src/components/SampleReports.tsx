@@ -21,13 +21,13 @@ export default function SampleReports() {
       name: "BNP Paribas | Income Statement",
       link: "/BNP_Paribas_P3_Final.xlsx",
       preview: "/BNP_Paribas_P3_Final.pdf",
-      thumbnail: "/BNP-Logo.png"
+      thumbnail: "/bnp-logo.png"
     },
     {
       name: "Capital One | Income Statement",
       link: "/Capital_One_P3_Final.xls",
       preview: "/Capital_One_P3_Final.pdf",
-      thumbnail: "/CapitalOne-Logo.png"
+      thumbnail: "/capitalone-logo.png"
     },
 
     {
@@ -40,13 +40,13 @@ export default function SampleReports() {
       name: "BNP Paribas | Balance Sheet",
       link: "/BNP_Paribas_M4_Final.xlsx",
       preview: "/BNP_Paribas_M4_Final.pdf",
-      thumbnail: "/BNP-Logo.png"
+      thumbnail: "/bnp-logo.png"
     },
     {
       name: "Capital One | Balance Sheet",
       link: "/Capital_One_M4_Final.xlsx",
       preview: "/Capital_One_M4_Final.pdf",
-      thumbnail: "/CapitalOne-Logo.png"
+      thumbnail: "/capitalone-logo.png"
     },
   ];
 
