@@ -2,31 +2,72 @@
 
 import { useState } from "react";
 import { X, Download } from "lucide-react";
+import { useEffect } from "react"; // ensure this is at the top
 
 export default function SampleReports() {
   const [previewSrc, setPreviewSrc] = useState<string | null>(null);
   const [downloadSrc, setDownloadSrc] = useState<string | null>(null);
+  const [closing, setClosing] = useState(false);
+
 
   const samples = [
     {
       name: "Citibank | Income Statement",
-      link: "/Citibank_NA_P3_Final.xls",
+      link: "/Citibank_NA_P3_Final.xlsx",
       preview: "/Citibank_NA_P3_Final.pdf",
-      thumbnail: "/citibank-Logo.png"
+      thumbnail: "/Citibank-Logo.png"
     },
     {
       name: "BNP Paribas | Income Statement",
-      link: "/BNP_Paribas_P3_Final.xls",
+      link: "/BNP_Paribas_P3_Final.xlsx",
       preview: "/BNP_Paribas_P3_Final.pdf",
-      thumbnail: "/bnp-Logo.png"
+      thumbnail: "/BNP-Logo.png"
     },
     {
       name: "Capital One | Income Statement",
       link: "/Capital_One_P3_Final.xls",
       preview: "/Capital_One_P3_Final.pdf",
-      thumbnail: "/capitalone-Logo.png"
-    }
+      thumbnail: "/CapitalOne-Logo.png"
+    },
+
+    {
+      name: "Citibank | Balance Sheet",
+      link: "/Citibank_NA_M4_Final.xlsx",
+      preview: "/Citibank_NA_M4_Final.pdf",
+      thumbnail: "/Citibank-Logo.png"
+    },
+    {
+      name: "BNP Paribas | Balance Sheet",
+      link: "/BNP_Paribas_M4_Final.xlsx",
+      preview: "/BNP_Paribas_M4_Final.pdf",
+      thumbnail: "/BNP-Logo.png"
+    },
+    {
+      name: "Capital One | Balance Sheet",
+      link: "/Capital_One_M4_Final.xlsx",
+      preview: "/Capital_One_M4_Final.pdf",
+      thumbnail: "/CapitalOne-Logo.png"
+    },
   ];
+
+  // inside SampleReports component...
+useEffect(() => {
+  const handleKeyDown = (e: KeyboardEvent) => {
+    if (e.key === "Escape") {
+      // Only close if modal is open and not already closing
+      if (previewSrc && !closing) {
+        setClosing(true);
+        setTimeout(() => {
+          setPreviewSrc(null);
+          setClosing(false);
+        }, 250);
+      }
+    }
+  };
+
+  window.addEventListener("keydown", handleKeyDown);
+  return () => window.removeEventListener("keydown", handleKeyDown);
+}, [previewSrc, closing]);
 
   return (
     <section className="mt-24 max-w-5xl mx-auto text-center mb-40 px-4">
@@ -72,52 +113,77 @@ export default function SampleReports() {
         ))}
       </div>
 
-      {/* Modal */}
-      {previewSrc && (
-        <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 p-4 animate-fade-in">
-          <div className="bg-white border border-black rounded-none max-w-5xl w-full h-[85vh] shadow-xl relative flex flex-col">
+{/* Modal */}
+{previewSrc && (
+  <div
+    className={`fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 p-4 
+      ${closing ? "modal-fade-out" : "modal-fade-in"}`}
+    onClick={() => {
+      setClosing(true);
+      setTimeout(() => {
+        setPreviewSrc(null);
+        setClosing(false);
+      }, 250);
+    }}
+  >
+    <div
+      className="bg-white border border-black rounded-none max-w-5xl w-full h-[85vh] shadow-xl relative flex flex-col"
+      onClick={(e) => e.stopPropagation()}
+    >
+      {/* Header */}
+      <div className="flex items-center justify-between px-4 py-2 border-b border-black bg-black text-white">
+        <h3 className="font-semibold">Report Preview</h3>
 
-            {/* Header */}
-            <div className="flex items-center justify-between px-4 py-2 border-b border-black bg-black text-white">
-              <h3 className="font-semibold">Report Preview</h3>
+        <button
+          onClick={() => {
+            setClosing(true);
+            setTimeout(() => {
+              setPreviewSrc(null);
+              setClosing(false);
+            }, 250);
+          }}
+          className="p-1 hover:bg-white hover:text-black transition"
+        >
+          <X className="w-5 h-5" />
+        </button>
+      </div>
 
-              <button
-                onClick={() => setPreviewSrc(null)}
-                className="p-1 hover:bg-white hover:text-black transition"
-              >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
+      {/* PDF iframe */}
+      <iframe
+        src={previewSrc}
+        className="flex-1 w-full"
+        style={{ border: "none" }}
+      ></iframe>
 
-            {/* PDF iframe */}
-            <iframe
-              src={previewSrc}
-              className="flex-1 w-full"
-              style={{ border: "none" }}
-            ></iframe>
+      {/* Footer */}
+      <div className="border-t border-black p-4 bg-gray-50 flex justify-end gap-4">
+        <a
+          href={downloadSrc ?? "#"}
+          download
+          className="flex items-center gap-2 px-4 py-2 bg-black text-white border border-black hover:bg-gray-900 transition"
+        >
+          <Download className="w-4 h-4" />
+          Download Excel File
+        </a>
 
-            {/* Footer */}
-            <div className="border-t border-black p-4 bg-gray-50 flex justify-end gap-4">
-              <a
-                href={downloadSrc ?? "#"}
-                download
-                className="flex items-center gap-2 px-4 py-2 bg-black text-white border border-black hover:bg-gray-900 transition"
-              >
-                <Download className="w-4 h-4" />
-                Download Full File
-              </a>
+        <button
+          onClick={() => {
+            setClosing(true);
+            setTimeout(() => {
+              setPreviewSrc(null);
+              setClosing(false);
+            }, 250);
+          }}
+          className="px-4 py-2 bg-white border border-black hover:bg-gray-100 transition"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+)}
 
-              <button
-                onClick={() => setPreviewSrc(null)}
-                className="px-4 py-2 bg-white border border-black hover:bg-gray-100 transition"
-              >
-                Close
-              </button>
-            </div>
 
-          </div>
-        </div>
-      )}
 
     </section>
   );

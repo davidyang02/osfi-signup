@@ -48,7 +48,7 @@ export default function WaitlistForm() {
   };
 
 if (isSubmitted) {
-  return <WaitlistFeedback variant="full"/>;
+  return <WaitlistFeedback variant="full" email={email}/>;
 }
 
 

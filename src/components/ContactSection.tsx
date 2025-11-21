@@ -63,7 +63,7 @@ export default function ContactSection() {
 
             <div className="flex items-start gap-3">
               <Mail className="w-5 h-5 mt-0.5" />
-              <p>openbsis@outlook.com</p>
+              <p>steven@openbsis.com</p>
             </div>
             <div className="flex items-start gap-3">
               <Clock className="w-5 h-5 mt-0.5" />

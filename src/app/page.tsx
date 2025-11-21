@@ -36,7 +36,7 @@ export default function Home() {
 {/* Logo as first nav item */}
 <div
   className="flex-1 flex items-center justify-center border-r border-black bg-black 
-    transition hover:bg-gray-1000 hover:scale-[1.02] 
+    transition hover:bg-gray-1000 hover: 
     hover:shadow-[0_10px_40px_rgba(0,0,0,0.5)]"
 >
   <Link
@@ -51,8 +51,9 @@ export default function Home() {
     <nav className="flex flex-[4]"> 
       <ul className="flex flex-1 items-stretch text-sm font-medium text-gray-800">
 
-        <li className="flex-1 flex items-center justify-center border-l border-black hover:bg-black-100
+        <li className="flex-1 flex items-center justify-center border-l border-black hover:bg-gray-100
           transition hover:scale-[1.02] hover:shadow-[0_10px_40px_rgba(0,0,0,0.5)]">
+            
           <Link href="#features" className="hover:underline underline-offset-4">
             Features
           </Link>
@@ -65,12 +66,21 @@ export default function Home() {
           </Link>
         </li>
 
+                <li className="flex-1 flex items-center justify-center border-l border-black hover:bg-gray-100
+          transition hover:scale-[1.02] hover:shadow-[0_10px_40px_rgba(0,0,0,0.5)]">
+          <Link href="#samples" className="hover:underline underline-offset-4">
+            Samples
+          </Link>
+        </li>
+
         <li className="flex-1 flex items-center justify-center border-l border-black hover:bg-gray-100
           transition hover:scale-[1.02] hover:shadow-[0_10px_40px_rgba(0,0,0,0.5)]">
           <Link href="#waitlist" className="hover:underline underline-offset-4">
             Waitlist
           </Link>
         </li>
+
+
 
         <li className="flex-1 flex items-center justify-center border-l border-black hover:bg-gray-100
           transition hover:scale-[1.02] hover:shadow-[0_10px_40px_rgba(0,0,0,0.5)]">
@@ -228,8 +238,9 @@ export default function Home() {
     </h3>
 
     <p className="text-gray-300 text-sm leading-relaxed">
-      Save time with pre-built financial statement pipelines designed for 
-      Open Government data.
+      OSFI is retiring its legacy financial data pages and moving all statements to Open Government. 
+OpenBSIS automatically restructures the new raw XLS files into standardized, ready-to-analyze 
+financial statements, ensuring your workflows remain fully compatible during and after the transition.
     </p>
   </div>
 </div>
@@ -270,6 +281,7 @@ export default function Home() {
             className="w-full h-full"
             style={{ border: "none" }}
             title="Problem Excel Preview"
+            sandbox="allow-same-origin"
           ></iframe>
         </div>
 
@@ -301,6 +313,7 @@ export default function Home() {
             className="w-full h-full"
             style={{ border: "none" }}
             title="Solution Excel Preview"
+            sandbox="allow-same-origin allow-scripts" 
           ></iframe>
         </div>
 
@@ -329,8 +342,10 @@ export default function Home() {
 </section>
 
 
-
-<SampleReports/>
+<section id="samples"
+  className="py-20 md:py-12 bg-white border-t border-b border-black scroll-mt-20">
+  <SampleReports />
+</section>
 
 
 
@@ -373,51 +388,125 @@ export default function Home() {
 
 
 
+<footer className="border-t bg-black text-white">
+  <div className="container mx-auto px-6 py-12">
 
+    {/* TOP — Centered Brand + Description */}
+    <div className="text-center max-w-xl mx-auto mb-5">
+      <a href="/" className="font-bold text-2xl hover:underline">
+        OpenBSIS
+      </a>
 
-
-
-
-      {/* Footer */}
-      <footer className="border-t text-white bg-black">
-        <div className="container mx-auto px-4 py-12">
-          <div className="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto">
-            <div className="space-y-4">
-              <h3 className="font-bold text-lg">OpenBSIS</h3>
-              <p className="text-sm text-muted-foreground">
-                Making government financial data accessible to everyone.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Product</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>Features</li>
-                <li>Pricing</li>
-                <li>Documentation</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Company</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>About</li>
-                <li>Blog</li>
-                <li>Careers</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Legal</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>Privacy Policy</li>
-                <li>Terms of Service</li>
-                <li>Contact</li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t mt-12 pt-8 text-center text-sm">
-            <p>© 2025 OpenBSIS. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
+        Making government financial data accessible to everyone.
+      </p>
     </div>
+
+    {/* BOTTOM — Centered 4-Link Row */}
+    <div className="flex flex-col sm:flex-row justify-center gap-10 sm:gap-16 text-center">
+
+      <div>
+        <a href="#features" className="font-semibold text-lg block hover:underline">
+          Features
+        </a>
+        <ul className="space-y-2 text-sm text-muted-foreground"></ul>
+      </div>
+
+      <div>
+        <a href="#product" className="font-semibold text-lg block hover:underline">
+          Product
+        </a>
+        <ul className="space-y-2 text-sm text-muted-foreground">
+          {/* optional submenu */}
+        </ul>
+      </div>
+
+      <div>
+        <a href="#samples" className="font-semibold text-lg block hover:underline">
+          Samples
+        </a>
+        <ul className="space-y-2 text-sm text-muted-foreground">
+          {/* optional submenu */}
+        </ul>
+      </div>
+
+
+      <div>
+        <a href="#waitlist" className="font-semibold text-lg block hover:underline">
+          Waitlist
+        </a>
+        <ul className="space-y-2 text-sm text-muted-foreground"></ul>
+      </div>
+
+      <div>
+        <a href="#contact" className="font-semibold text-lg block hover:underline">
+          Contact
+        </a>
+        <ul className="space-y-2 text-sm text-muted-foreground"></ul>
+      </div>
+
+    </div>
+
+    {/* Copyright */}
+    <div className="border-t border-gray-800 mt-10 pt-6 text-center text-sm text-muted-foreground">
+      © 2025 OpenBSIS. All rights reserved.
+    </div>
+
+  </div>
+</footer>
+
+
+
+
+
+    </div>
+
   );
-}
+ }
+
+
+
+
+//       {/* Footer */}
+//       <footer className="border-t text-white bg-black">
+//         <div className="container mx-auto px-4 py-12">
+//           <div className="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+//             <div className="space-y-4">
+//               <h3 className="font-bold text-lg">OpenBSIS</h3>
+//               <p className="text-sm text-muted-foreground">
+//                 Making government financial data accessible to everyone.
+//               </p>
+//             </div>
+//             <div>
+//               <h4 className="font-semibold mb-4">Product</h4>
+//               <ul className="space-y-2 text-sm text-muted-foreground">
+//                 <li>Features</li>
+//                 <li>Pricing</li>
+//                 <li>Documentation</li>
+//               </ul>
+//             </div>
+//             <div>
+//               <h4 className="font-semibold mb-4">Company</h4>
+//               <ul className="space-y-2 text-sm text-muted-foreground">
+//                 <li>About</li>
+//                 <li>Blog</li>
+//                 <li>Careers</li>
+//               </ul>
+//             </div>
+//             <div>
+//               <h4 className="font-semibold mb-4">Legal</h4>
+//               <ul className="space-y-2 text-sm text-muted-foreground">
+//                 <li>Privacy Policy</li>
+//                 <li>Terms of Service</li>
+//                 <li>Contact</li>
+//               </ul>
+//             </div>
+//           </div>
+//           <div className="border-t mt-12 pt-8 text-center text-sm">
+//             <p>© 2025 OpenBSIS. All rights reserved.</p>
+//           </div>
+//         </div>
+//       </footer>
+//     </div>
+//   );
+// }

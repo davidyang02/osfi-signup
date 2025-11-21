@@ -28,3 +28,4 @@ export default function ExcelPreview({ file }: ExcelPreviewProps) {
     />
   );
 }
+

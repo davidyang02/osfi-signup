@@ -3,12 +3,12 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { CheckCircle2 } from "lucide-react";
 import { supabase } from "@/lib/supabaseClient";
 import WaitlistFeedback from "@/components/WaitlistFeedback";
 
 interface WaitlistFormBaseProps {
-  variant?: "hero" | "section";
+  variant?: "hero" | "section"; email?: string;
+  
 }
 
 export default function WaitlistFormBase({ variant = "section" }: WaitlistFormBaseProps) {
@@ -30,7 +30,13 @@ export default function WaitlistFormBase({ variant = "section" }: WaitlistFormBa
     setIsLoading(true);
 
     try {
-      const { error } = await supabase.from("waitlist_emails").insert([{ email }]);
+      // ⭐ UPDATED: Insert email + new nullable fields
+      const { error } = await supabase.from("waitlist_emails").insert([{
+        email,
+        feedback: null,
+        contact_opt_in: null,
+      }]);
+
       if (error) {
         if (error.message.includes("duplicate key")) {
           setError("This email is already on the waitlist.");
@@ -49,15 +55,10 @@ export default function WaitlistFormBase({ variant = "section" }: WaitlistFormBa
     }
   };
 
-if (isSubmitted) {
-  return <WaitlistFeedback variant="compact" />;
-}
-
-
-
-
-
-
+  // Show feedback prompt after email submission
+  if (isSubmitted) {
+    return <WaitlistFeedback variant="compact" email={email} />;
+  }
 
   const inputClasses =
     variant === "hero"
