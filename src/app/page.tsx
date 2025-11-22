@@ -107,7 +107,12 @@ export default function Home() {
 
 
 
-<section className="relative overflow-hidden h-[60vh] flex items-end">
+<section className="relative overflow-hidden 
+    h-[65vh]           /* mobile */
+    md:h-[55vh]        /* tablets & small laptops */
+    lg:h-[70vh]        /* large desktops */
+    flex items-end
+  ">
   {/* Background and overlays stay the same */}
   <div
     className="absolute inset-0 bg-cover bg-center"
