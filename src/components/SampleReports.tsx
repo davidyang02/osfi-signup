@@ -25,7 +25,7 @@ export default function SampleReports() {
     },
     {
       name: "Capital One | Income Statement",
-      link: "/Capital_One_P3_Final.xls",
+      link: "/Capital_One_P3_Final.xlsx",
       preview: "/Capital_One_P3_Final.pdf",
       thumbnail: "/capitalone-logo.png"
     },
