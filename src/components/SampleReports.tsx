@@ -25,7 +25,7 @@ export default function SampleReports() {
     },
     {
       name: "Capital One | Income Statement",
-      link: "/Capital_One_P3_Final.xls",
+      link: "/Capital_One_P3_Final.xlsx",
       preview: "/Capital_One_P3_Final.pdf",
       thumbnail: "/CapitalOne-Logo.png"
     },
@@ -48,6 +48,86 @@ export default function SampleReports() {
       preview: "/Capital_One_M4_Final.pdf",
       thumbnail: "/CapitalOne-Logo.png"
     },
+    {
+      name: "Fairstone Bank of Canada | Allowances",
+      link: "/Fairstone_Bank_of_Canada_E3_Final.xlsx",
+      preview: "/Fairstone_Bank_of_Canada_E3_Final.pdf",
+      thumbnail: "/fairstone-logo.png"
+    },
+
+        {
+      name: "First Nations Bank of Canada | Allowances",
+      link: "/First_Nations_Bank_of_Canada_E3_Final.xlsx",
+      preview: "/First_Nations_Bank_of_Canada_E3_Final.pdf",
+      thumbnail: "/fnbc-logo.png"
+    },
+    {
+      name: "Haventree Bank | Allowances",
+      link: "/Haventree_Bank_E3_Final.xlsx",
+      preview: "/Haventree_Bank_E3_Final.pdf",
+      thumbnail: "/haventree-logo.png"
+    },
+        {
+      name: "Fairstone Bank of Canada | Balance Sheet",
+      link: "/Fairstone_Bank_of_Canada_M4_Final.xlsx",
+      preview: "/Fairstone_Bank_of_Canada_M4_Final.pdf",
+      thumbnail: "/fairstone-logo.png"
+    },
+
+        {
+      name: "First Nations Bank of Canada | Balance Sheet",
+      link: "/First_Nations_Bank_of_Canada_M4_Final.xlsx",
+      preview: "/First_Nations_Bank_of_Canada_M4_Final.pdf",
+      thumbnail: "/fnbc-logo.png"
+    },
+    {
+      name: "Haventree Bank | Balance Sheet",
+      link: "/Haventree_Bank_M4_Final.xlsx",
+      preview: "/Haventree_Bank_M4_Final.pdf",
+      thumbnail: "/haventree-logo.png"
+    },
+        {
+      name: "Canadian Tire Bank  | Allowances",
+      link: "/Canadian_Tire_Bank_E3_Final.xlsx",
+      preview: "/Canadian_Tire_Bank_E3_Final.pdf",
+      thumbnail: "/tire-logo.png"
+    },
+
+        {
+      name: "President's Choice Bank | Allowances",
+      link: "/President's_Choice_Bank_E3_Final.xlsx",
+      preview: "/President's_Choice_Bank_E3_Final.pdf",
+      thumbnail: "/pc-logo.png"
+    },
+    {
+      name: "Rogers Bank | Allowances",
+      link: "/Rogers_Bank_E3_Final.xlsx",
+      preview: "/Rogers_Bank_E3_Final.pdf",
+      thumbnail: "/rogers-logo.png"
+    },
+        {
+      name: "Canadian Tire Bank  | Balance Sheet",
+      link: "/Canadian_Tire_Bank_M4_Final.xlsx",
+      preview: "/Canadian_Tire_Bank_M4_Final.pdf",
+      thumbnail: "/tire-logo.png"
+    },
+
+        {
+      name: "President's Choice | Balance Sheet",
+      link: "/President's_Choice_Bank_M4_Final.xlsx",
+      preview: "/President's_Choice_Bank_M4_Final.pdf",
+      thumbnail: "/pc-logo.png"
+    },
+    {
+      name: "Rogers Bank | Balance Sheet",
+      link: "/Rogers_Bank_M4_Final.xlsx",
+      preview: "/Rogers_Bank_M4_Final.pdf",
+      thumbnail: "/rogers-logo.png"
+    },
+
+
+
+
   ];
 
   // inside SampleReports component...
