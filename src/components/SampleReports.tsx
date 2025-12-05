@@ -10,125 +10,367 @@ export default function SampleReports() {
   const [closing, setClosing] = useState(false);
 
 
-  const samples = [
-    {
-      name: "Citibank | Income Statement",
-      link: "/Citibank_NA_P3_Final.xlsx",
-      preview: "/Citibank_NA_P3_Final.pdf",
-      thumbnail: "/Citibank-Logo.png"
-    },
-    {
-      name: "BNP Paribas | Income Statement",
-      link: "/BNP_Paribas_P3_Final.xlsx",
-      preview: "/BNP_Paribas_P3_Final.pdf",
-      thumbnail: "/BNP-Logo.png"
-    },
-    {
-      name: "Capital One | Income Statement",
-      link: "/Capital_One_P3_Final.xlsx",
-      preview: "/Capital_One_P3_Final.pdf",
-      thumbnail: "/CapitalOne-Logo.png"
-    },
+const samples = [
+  {
+    title: "Foreign Bank Branches",
+    banks: [
+      {
+        bankName: "Citibank",
+        reports: [
+          {
+            name: "Income Statement",
+            link: "/Citibank_NA_P3_Final.xlsx",
+            preview: "/Citibank_NA_P3_Final.pdf",
+            thumbnail: "/Citibank-Logo.png"
+          },
+          {
+            name: "Balance Sheet",
+            link: "/Citibank_NA_M4_Final.xlsx",
+            preview: "/Citibank_NA_M4_Final.pdf",
+            thumbnail: "/Citibank-Logo.png"
+          },
+          {
+            name: "Allowances",
+            link: "/Citibank_NA_E3_Final.xlsx",
+            preview: "/Citibank_NA_E3_Final.pdf",
+            thumbnail: "/Citibank-Logo.png"
+          },
+          {
+            name: "Deposit Requirement",
+            link: "/Citibank_NA_K3_Final.xlsx",
+            preview: "/Citibank_NA_K3_Final.pdf",
+            thumbnail: "/Citibank-Logo.png"
+          }
+        ]
+      },
 
-    {
-      name: "Citibank | Balance Sheet",
-      link: "/Citibank_NA_M4_Final.xlsx",
-      preview: "/Citibank_NA_M4_Final.pdf",
-      thumbnail: "/Citibank-Logo.png"
-    },
-    {
-      name: "BNP Paribas | Balance Sheet",
-      link: "/BNP_Paribas_M4_Final.xlsx",
-      preview: "/BNP_Paribas_M4_Final.pdf",
-      thumbnail: "/BNP-Logo.png"
-    },
-    {
-      name: "Capital One | Balance Sheet",
-      link: "/Capital_One_M4_Final.xlsx",
-      preview: "/Capital_One_M4_Final.pdf",
-      thumbnail: "/CapitalOne-Logo.png"
-    },
-    {
-      name: "Fairstone Bank of Canada | Allowances",
-      link: "/Fairstone_Bank_of_Canada_E3_Final.xlsx",
-      preview: "/Fairstone_Bank_of_Canada_E3_Final.pdf",
-      thumbnail: "/fairstone-logo.png"
-    },
+      {
+        bankName: "BNP Paribas",
+        reports: [
+          {
+            name: "Income Statement",
+            link: "/BNP_Paribas_P3_Final.xlsx",
+            preview: "/BNP_Paribas_P3_Final.pdf",
+            thumbnail: "/BNP-Logo.png"
+          },
+          {
+            name: "Balance Sheet",
+            link: "/BNP_Paribas_M4_Final.xlsx",
+            preview: "/BNP_Paribas_M4_Final.pdf",
+            thumbnail: "/BNP-Logo.png"
+          },
+          {
+            name: "Allowances",
+            link: "/BNP_Paribas_E3_Final.xlsx",
+            preview: "/BNP_Paribas_E3_Final.pdf",
+            thumbnail: "/BNP-Logo.png"
+          },
+          {
+            name: "Deposit Requirement",
+            link: "/BNP_Paribas_K3_Final.xlsx",
+            preview: "/BNP_Paribas_K3_Final.pdf",
+            thumbnail: "/BNP-Logo.png"
+          }
+        ]
+      },
 
-        {
-      name: "First Nations Bank of Canada | Allowances",
-      link: "/First_Nations_Bank_of_Canada_E3_Final.xlsx",
-      preview: "/First_Nations_Bank_of_Canada_E3_Final.pdf",
-      thumbnail: "/fnbc-logo.png"
-    },
-    {
-      name: "Haventree Bank | Allowances",
-      link: "/Haventree_Bank_E3_Final.xlsx",
-      preview: "/Haventree_Bank_E3_Final.pdf",
-      thumbnail: "/haventree-logo.png"
-    },
-        {
-      name: "Fairstone Bank of Canada | Balance Sheet",
-      link: "/Fairstone_Bank_of_Canada_M4_Final.xlsx",
-      preview: "/Fairstone_Bank_of_Canada_M4_Final.pdf",
-      thumbnail: "/fairstone-logo.png"
-    },
+      {
+        bankName: "Capital One",
+        reports: [
+          {
+            name: "Income Statement",
+            link: "/Capital_One_P3_Final.xlsx",
+            preview: "/Capital_One_P3_Final.pdf",
+            thumbnail: "/CapitalOne-Logo.png"
+          },
+          {
+            name: "Balance Sheet",
+            link: "/Capital_One_M4_Final.xlsx",
+            preview: "/Capital_One_M4_Final.pdf",
+            thumbnail: "/CapitalOne-Logo.png"
+          },
+          {
+            name: "Allowances",
+            link: "/Capital_One_E3_Final.xlsx",
+            preview: "/Capital_One_E3_Final.pdf",
+            thumbnail: "/CapitalOne-Logo.png"
+          },
+          {
+            name: "Deposit Requirement",
+            link: "/Capital_One_K3_Final.xlsx",
+            preview: "/Capital_One_K3_Final.pdf",
+            thumbnail: "/CapitalOne-Logo.png"
+          }
+        ]
+      }
+    ]
+  },
 
-        {
-      name: "First Nations Bank of Canada | Balance Sheet",
-      link: "/First_Nations_Bank_of_Canada_M4_Final.xlsx",
-      preview: "/First_Nations_Bank_of_Canada_M4_Final.pdf",
-      thumbnail: "/fnbc-logo.png"
-    },
-    {
-      name: "Haventree Bank | Balance Sheet",
-      link: "/Haventree_Bank_M4_Final.xlsx",
-      preview: "/Haventree_Bank_M4_Final.pdf",
-      thumbnail: "/haventree-logo.png"
-    },
-        {
-      name: "Canadian Tire Bank  | Allowances",
-      link: "/Canadian_Tire_Bank_E3_Final.xlsx",
-      preview: "/Canadian_Tire_Bank_E3_Final.pdf",
-      thumbnail: "/tire-logo.png"
-    },
+  // ---------------------------------------------------------------------------
+  {
+    title: "Domestic Banks",
+    banks: [
+      {
+        bankName: "Fairstone Bank of Canada",
+        reports: [
+          {
+            name: "Income Statement",
+            link: "/Fairstone_Bank_of_Canada_P3_Final.xlsx",
+            preview: "/Fairstone_Bank_of_Canada_P3_Final.pdf",
+            thumbnail: "/fairstone-logo.png"
+          },
+          {
+            name: "Balance Sheet",
+            link: "/Fairstone_Bank_of_Canada_M4_Final.xlsx",
+            preview: "/Fairstone_Bank_of_Canada_M4_Final.pdf",
+            thumbnail: "/fairstone-logo.png"
+          },
+          {
+            name: "Allowances",
+            link: "/Fairstone_Bank_of_Canada_E3_Final.xlsx",
+            preview: "/Fairstone_Bank_of_Canada_E3_Final.pdf",
+            thumbnail: "/fairstone-logo.png"
+          },
+          {
+            name: "Capital Components",
+            link: "/Fairstone_Bank_of_Canada_Cap_Final.xlsx",
+            preview: "/Fairstone_Bank_of_Canada_Cap_Final.pdf",
+            thumbnail: "/fairstone-logo.png"
+          },
+          {
+            name: "Derivative Components",
+            link: "/Fairstone_Bank_of_Canada_Der_Final.xlsx",
+            preview: "/Fairstone_Bank_of_Canada_Der_Final.pdf",
+            thumbnail: "/fairstone-logo.png"
+          }
+        ]
+      },
 
-        {
-      name: "President's Choice Bank | Allowances",
-      link: "/President's_Choice_Bank_E3_Final.xlsx",
-      preview: "/President's_Choice_Bank_E3_Final.pdf",
-      thumbnail: "/pc-logo.png"
-    },
-    {
-      name: "Rogers Bank | Allowances",
-      link: "/Rogers_Bank_E3_Final.xlsx",
-      preview: "/Rogers_Bank_E3_Final.pdf",
-      thumbnail: "/rogers-logo.png"
-    },
-        {
-      name: "Canadian Tire Bank  | Balance Sheet",
-      link: "/Canadian_Tire_Bank_M4_Final.xlsx",
-      preview: "/Canadian_Tire_Bank_M4_Final.pdf",
-      thumbnail: "/tire-logo.png"
-    },
+      {
+        bankName: "First Nations Bank of Canada",
+        reports: [
+          {
+            name: "Income Statement",
+            link: "/First_Nations_Bank_of_Canada_P3_Final.xlsx",
+            preview: "/First_Nations_Bank_of_Canada_P3_Final.pdf",
+            thumbnail: "/fnbc-logo.png"
+          },
+          {
+            name: "Balance Sheet",
+            link: "/First_Nations_Bank_of_Canada_M4_Final.xlsx",
+            preview: "/First_Nations_Bank_of_Canada_M4_Final.pdf",
+            thumbnail: "/fnbc-logo.png"
+          },
+          {
+            name: "Allowances",
+            link: "/First_Nations_Bank_of_Canada_E3_Final.xlsx",
+            preview: "/First_Nations_Bank_of_Canada_E3_Final.pdf",
+            thumbnail: "/fnbc-logo.png"
+          },
+          {
+            name: "Capital Components",
+            link: "/First_Nations_Bank_of_Canada_Cap_Final.xlsx",
+            preview: "/First_Nations_Bank_of_Canada_Der_Final.pdf",
+            thumbnail: "/fnbc-logo.png"
+          },
+          {
+            name: "Derivative Components",
+            link: "/First_Nations_Bank_of_Canada_Der_Final.xlsx",
+            preview: "/First_Nations_Bank_of_Canada_Der_Final.pdf",
+            thumbnail: "/fnbc-logo.png"
+          }
+        ]
+      },
 
-        {
-      name: "President's Choice | Balance Sheet",
-      link: "/President's_Choice_Bank_M4_Final.xlsx",
-      preview: "/President's_Choice_Bank_M4_Final.pdf",
-      thumbnail: "/pc-logo.png"
-    },
-    {
-      name: "Rogers Bank | Balance Sheet",
-      link: "/Rogers_Bank_M4_Final.xlsx",
-      preview: "/Rogers_Bank_M4_Final.pdf",
-      thumbnail: "/rogers-logo.png"
-    },
+      {
+        bankName: "Haventree Bank",
+        reports: [
+          {
+            name: "Income Statement",
+            link: "/Haventree_Bank_P3_Final.xlsx",
+            preview: "/Haventree_Bank_P3_Final.pdf",
+            thumbnail: "/haventree-logo.png"
+          },
+          {
+            name: "Balance Sheet",
+            link: "/Haventree_Bank_M4_Final.xlsx",
+            preview: "/Haventree_Bank_M4_Final.pdf",
+            thumbnail: "/haventree-logo.png"
+          },
+          {
+            name: "Allowances",
+            link: "/Haventree_Bank_E3_Final.xlsx",
+            preview: "/Haventree_Bank_E3_Final.pdf",
+            thumbnail: "/haventree-logo.png"
+          },
+          {
+            name: "Capital Components",
+            link: "/Haventree_Bank_Cap_Final.xlsx",
+            preview: "/Haventree_Bank_Cap_Final.pdf",
+            thumbnail: "/haventree-logo.png"
+          },
+          {
+            name: "Derivative Components",
+            link: "/Haventree_Bank_Der_Final.xlsx",
+            preview: "/Haventree_Bank_Der_Final.pdf",
+            thumbnail: "/haventree-logo.png"
+          }
+        ]
+      },
 
+      {
+        bankName: "Canadian Tire Bank",
+        reports: [
+          {
+            name: "Income Statement",
+            link: "/Canadian_Tire_Bank_P3_Final.xlsx",
+            preview: "/Canadian_Tire_Bank_P3_Final.pdf",
+            thumbnail: "/tire-logo.png"
+          },
+          {
+            name: "Balance Sheet",
+            link: "/Canadian_Tire_Bank_M4_Final.xlsx",
+            preview: "/Canadian_Tire_Bank_M4_Final.pdf",
+            thumbnail: "/tire-logo.png"
+          },
+          {
+            name: "Allowances",
+            link: "/Canadian_Tire_Bank_E3_Final.xlsx",
+            preview: "/Canadian_Tire_Bank_E3_Final.pdf",
+            thumbnail: "/tire-logo.png"
+          },
+          {
+            name: "Capital Components",
+            link: "/Canadian_Tire_Bank_Cap_Final.xlsx",
+            preview: "/Canadian_Tire_Bank_Cap_Final.pdf",
+            thumbnail: "/tire-logo.png"
+          },
+          {
+            name: "Derivative Components",
+            link: "/Canadian_Tire_Bank_Der_Final.xlsx",
+            preview: "/Canadian_Tire_Bank_Der_Final.pdf",
+            thumbnail: "/tire-logo.png"
+          }
+        ]
+      },
 
+      {
+        bankName: "President's Choice Bank",
+        reports: [
+          {
+            name: "Income Statement",
+            link: "/President's_Choice_Bank_P3_Final.xlsx",
+            preview: "/President's_Choice_Bank_P3_Final.pdf",
+            thumbnail: "/pc-logo.png"
+          },
+          {
+            name: "Balance Sheet",
+            link: "/President's_Choice_Bank_M4_Final.xlsx",
+            preview: "/President's_Choice_Bank_M4_Final.pdf",
+            thumbnail: "/pc-logo.png"
+          },
+          {
+            name: "Allowances",
+            link: "/President's_Choice_Bank_E3_Final.xlsx",
+            preview: "/President's_Choice_Bank_E3_Final.pdf",
+            thumbnail: "/pc-logo.png"
+          },
+          {
+            name: "Capital Components",
+            link: "/President's_Choice_Bank_Cap_Final.xlsx",
+            preview: "/President's_Choice_Bank_Cap_Final.pdf",
+            thumbnail: "/pc-logo.png"
+          },
+          {
+            name: "Derivative Components",
+            link: "/President's_Choice_Bank_Der_Final.xlsx",
+            preview: "/President's_Choice_Bank_Der_Final.pdf",
+            thumbnail: "/pc-logo.png"
+          }
+        ]
+      },
 
+      {
+        bankName: "Rogers Bank",
+        reports: [
+          {
+            name: "Income Statement",
+            link: "/Rogers_Bank_P3_Final.xlsx",
+            preview: "/Rogers_Bank_P3_Final.pdf",
+            thumbnail: "/rogers-logo.png"
+          },
+          {
+            name: "Balance Sheet",
+            link: "/Rogers_Bank_M4_Final.xlsx",
+            preview: "/Rogers_Bank_M4_Final.pdf",
+            thumbnail: "/rogers-logo.png"
+          },
+          {
+            name: "Allowances",
+            link: "/Rogers_Bank_E3_Final.xlsx",
+            preview: "/Rogers_Bank_E3_Final.pdf",
+            thumbnail: "/rogers-logo.png"
+          },
+          {
+            name: "Capital Components",
+            link: "/Rogers_Bank_Cap_Final.xlsx",
+            preview: "/Rogers_Bank_Cap_Final.pdf",
+            thumbnail: "/rogers-logo.png"
+          },
+          {
+            name: "Derivative Components",
+            link: "/Rogers_Bank_Der_Final.xlsx",
+            preview: "/Rogers_Bank_Der_Final.pdf",
+            thumbnail: "/rogers-logo.png"
+          }
+        ]
+      }
+    ]
+  },
 
-  ];
+  // ---------------------------------------------------------------------------
+  {
+    title: "Foreign Bank Subsidiary",
+    banks: [
+      {
+        bankName: "Amex Bank of Canada",
+        reports: [
+          {
+            name: "Income Statement",
+            link: "/Amex_Bank_of_Canada_P3_Final.xlsx",
+            preview: "/Amex_Bank_of_Canada_P3_Final.pdf",
+            thumbnail: "/Amex-logo.png"
+          },
+          {
+            name: "Balance Sheet",
+            link: "/Amex_Bank_of_Canada_M4_Final.xlsx",
+            preview: "/Amex_Bank_of_Canada_M4_Final.pdf",
+            thumbnail: "/Amex-logo.png"
+          },
+          {
+            name: "Allowances",
+            link: "/Amex_Bank_of_Canada_E3_Final.xlsx",
+            preview: "/Amex_Bank_of_Canada_E3_Final.pdf",
+            thumbnail: "/Amex-logo.png"
+          },
+          {
+            name: "Capital Components",
+            link: "/Amex_Bank_of_Canada_Cap_Final.xlsx",
+            preview: "/Amex_Bank_of_Canada_Cap_Final.pdf",
+            thumbnail: "/Amex-logo.png"
+          },
+          {
+            name: "Derivative Components",
+            link: "/Amex_Bank_of_Canada_Der_Final.xlsx",
+            preview: "/Amex_Bank_of_Canada_Der_Final.pdf",
+            thumbnail: "/Amex-logo.png"
+          }
+        ]
+      }
+    ]
+  }
+];
+
 
   // inside SampleReports component...
 useEffect(() => {
@@ -150,48 +392,89 @@ useEffect(() => {
 }, [previewSrc, closing]);
 
   return (
-    <section className="mt-24 max-w-5xl mx-auto text-center mb-40 px-4">
-      {/* Title */}
-      <h2 className="text-3xl md:text-5xl font-bold text-black underline underline-offset-4 decoration-[3px] decoration-black mb-30">
-        Sample Reports
-      </h2>
+<section className="mt-24 max-w-6xl mx-auto mb-40 px-4">
 
-      {/* Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-30">
-        {samples.map((item) => (
-          <button
-            key={item.name}
-            onClick={() => {
-              setPreviewSrc(item.preview);
-              setDownloadSrc(item.link);
-            }}
-            className="group flex flex-col items-center cursor-pointer"
-          >
-            {/* Black Outer Frame */}
-            <div className="bg-black border-4 border-black p-[2px] transition 
-                            hover:scale-[1.04] hover:shadow-[0_12px_40px_rgba(0,0,0,0.45)]">
+  {/* MAIN TITLE */}
+  <h2 className="text-3xl md:text-5xl font-bold text-black underline underline-offset-4 
+                 decoration-[3px] decoration-black mb-20 text-center">
+    Sample Reports
+  </h2>
 
-              {/* White inner border */}
-              <div className="border border-white bg-black w-65 h-100 flex items-center justify-center">
+  {/* STACK CATEGORIES VERTICALLY */}
+  <div className="flex flex-col gap-24">
 
-                {/* Thumbnail preview */}
-                <div
-                  className="w-full h-full bg-cover bg-center 
-                             group-hover:opacity-90 transition"
-                  style={{
-                    backgroundImage: `url('${item.thumbnail}')`
-                  }}
-                />
+    {samples.map((category) => (
+      <div key={category.title}>
+
+        {/* CATEGORY TITLE (CENTERED) */}
+        <h3 className="text-3xl font-bold mb-10 underline underline-offset-4 text-center">
+          {category.title}
+        </h3>
+
+        {/* BANKS STACKED VERTICALLY */}
+        <div className="flex flex-col gap-16">
+
+          {category.banks.map((bank) => (
+            <div key={bank.bankName}>
+
+              {/* BANK NAME (CENTERED) */}
+              <p className="text-xl font-semibold mb-6 text-center">
+                {bank.bankName}
+              </p>
+
+              {/* REPORT CARDS ROW (CENTERED, NO HORIZONTAL SCROLL ON DESKTOP) */}
+              <div
+                className="
+                  flex flex-row flex-wrap 
+                  justify-center
+                  gap-8
+                "
+              >
+                {bank.reports.map((item) => (
+                  <button
+                    key={item.name}
+                    onClick={() => {
+                      setPreviewSrc(item.preview);
+                      setDownloadSrc(item.link);
+                    }}
+                    className="
+                      group flex flex-col items-center cursor-pointer
+                      transition hover:scale-[1.03]
+                    "
+                  >
+                    {/* Outer frame */}
+                    <div className="bg-black border-4 border-black p-[2px]">
+
+                      {/* Inner image container */}
+                      <div className="border border-white bg-black 
+                                      w-44 h-64 flex items-center justify-center">
+                        <div
+                          className="w-full h-full bg-cover bg-center group-hover:opacity-90 transition"
+                          style={{ backgroundImage: `url('${item.thumbnail}')` }}
+                        />
+                      </div>
+
+                    </div>
+
+                    {/* Label */}
+                    <p className="mt-3 text-sm text-black group-hover:underline text-center w-40">
+                      {item.name}
+                    </p>
+                  </button>
+                ))}
               </div>
-            </div>
 
-            {/* Label */}
-            <p className="mt-4 text-sm font-medium text-black group-hover:underline underline-offset-4">
-              {item.name}
-            </p>
-          </button>
-        ))}
+            </div>
+          ))}
+
+        </div>
       </div>
+    ))}
+
+  </div>
+
+
+
 
 {/* Modal */}
 {previewSrc && (
